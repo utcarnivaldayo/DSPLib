@@ -251,15 +251,6 @@ double dsplab::filter::IIR::operator()(const double &input) {
     return output;
 }
 
-std::complex<double>& dsplab::filter::IIR::operator[](unsigned int index) {
-
-    static std::complex<double> buff;
-    buff = 0.0;
-    if (nullptr == frequency_response) return buff;
-    if (index >= s) return buff;
-    return frequency_response[index];
-}
-
 const std::complex<double>& dsplab::filter::IIR::operator[](unsigned int index) const {
     
     static std::complex<double> buff;

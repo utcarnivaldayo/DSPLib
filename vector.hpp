@@ -8,6 +8,8 @@
 //
 //------------------------------------------------------------------------------
 
+#ifndef _DSPLAB_VECTOR_HPP_
+#define _DSPLAB_VECTOR_HPP_
 #include <cmath>
 #include <cstdio>
 #include <complex>
@@ -73,3 +75,4 @@ namespace dsplab {
         };
     }
 }
+#endif

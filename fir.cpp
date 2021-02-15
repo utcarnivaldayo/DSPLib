@@ -142,6 +142,15 @@ double dsplab::filter::FIR::operator() (const double& input) {
     return output;                                                                                                                                                                                                    
 }
 
+const std::complex<double>& dsplab::filter::FIR::operator[](unsigned int index) const {
+    
+    static std::complex<double> buff;
+    buff = 0.0;
+    if (nullptr == frequency_response) return buff;
+    if (index >= s) return buff;
+    return frequency_response[index];
+}
+
 bool dsplab::filter::FIR::WriteCoefficients(const char* filename) {
 
     if (nullptr == filename) return false;

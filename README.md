@@ -7,8 +7,9 @@
 メソッドの詳細は各クラスのMarkdownファイルに記載してあるリファレンスを確認して下さい。
 
 ### ライブラリの利用して作成したIIRフィルタの特性のデモ
-![frequency_response](./frequency_response.gif)
-![coefficients](./coef.gif)
+![./fig/frequency_response](./fig/frequency_response.gif)
+![./fig/coefficients](./fig/coef.gif)
+
 ## 動作環境
 
 C++11のソースコードをコンパイルできる環境(以下は例)

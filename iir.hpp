@@ -56,7 +56,6 @@ namespace dsplab {
                 inline unsigned int GetS() const { return s; }
                 inline unsigned int GetDelaysLength() const { return delays_length; }
                 double operator()(const double &input);
-                std::complex<double>& operator[](unsigned int index);
                 const std::complex<double>& operator[](unsigned int index) const;
                 bool CalculateFrequencyResponse();
                 bool CalculateGroupDelay();

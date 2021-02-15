@@ -48,7 +48,6 @@ namespace dsplab {
                 bool CalculateFrequencyResponse();
 		    	bool CalculateGroupDelay();
                 double operator() (const double& input);
-                std::complex<double>& operator[](unsigned int index);
                 const std::complex<double>& operator[](unsigned int index) const;
                 bool WriteCoefficients(const char* filename);
                 bool WriteFrequencyResponse(const char* filename);
