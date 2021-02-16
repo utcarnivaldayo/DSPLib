@@ -69,6 +69,7 @@ namespace dsplab {
                 bool WritePoles(const char *filename);
                 bool ClearDelays();
                 void Clear();
+                static bool NotchFilter(double &scaling_coefficient, double &a_1, double &a_2, double &b_1, double &b_2, double notch_frequency, double pole_radius);
                 static bool CreateFrequencySample(double *normalized_angular_frequency, unsigned int s);
                 static bool ToSymmetry(double *numerator_coefficients, double *denominator_coefficients, unsigned int n, unsigned int m);
                 static bool StabilityTriangle(const double &b_1, const double &b_2);

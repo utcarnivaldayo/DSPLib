@@ -514,3 +514,16 @@ bool dsplab::filter::IIR::CoefficientsToZeros(std::complex<double> *zeros, doubl
     }
     return true;
 }
+
+static bool NotchFilter(double &scaling_coefficient, double &a_1, double &a_2, double &b_1, double &b_2, double notch_frequency, double pole_radius) {
+
+    if (pole_radius < 0.0) return false;
+    if (0.0 > notch_frequency || dsplab::constants::PI < notch_frequency) return false;
+    
+    a_1 = -2.0 * std::cos(notch_frequency);
+    a_2 = 1.0;
+    b_1 = -2.0 * pole_radius * std::cos(notch_frequency);
+    b_2 = pole_radius * pole_radius;
+    scaling_coefficient = (1.0 + b_1 + b_2 * b_2) / (2.0 + a_1);
+    return true;
+}
