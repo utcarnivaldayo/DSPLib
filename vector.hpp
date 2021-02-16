@@ -71,7 +71,6 @@ namespace dsplab {
                 static bool Write(const char* filename, std::complex<double> *vector, unsigned int length);
                 //static double Lp(double *vector, unsigned int length, unsigned int p);
                 //static double LInfinity(double *vector, unsigned int length);
-
         };
     }
 }
