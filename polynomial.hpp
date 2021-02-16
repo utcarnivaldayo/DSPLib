@@ -33,9 +33,9 @@ namespace dsplab {
                 static std::complex<double> Horner(std::complex<double> *coefficients, unsigned int n, std::complex<double> &z, std::complex<double> non_monic = 1.0);
                 static double Horner(double *coefficients, unsigned int n, double &z, double non_monic = 1.0);
                 static std::complex<double> ReverseHorner(double *coefficients, unsigned int length, std::complex<double> &z);
+                static std::complex<double> ReverseHorner(std::complex<double> *coefficients, unsigned int length, std::complex<double> &z);
                 static bool DKAMethod(std::complex<double> *zeros, std::complex<double> *coefficients, unsigned int n);
         };
     }
 }
-
 #endif

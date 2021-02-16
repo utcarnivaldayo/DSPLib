@@ -131,6 +131,20 @@ std::complex<double> dsplab::math::Polynomial::ReverseHorner(double *coefficient
     return ans;
 }
 
+std::complex<double> dsplab::math::Polynomial::ReverseHorner(std::complex<double> *coefficients, unsigned int length, std::complex<double> &z) {
+
+    if (nullptr == coefficients) return 0.0;
+    if (0u == length) return 0.0;
+    std::complex<double> ans = coefficients[length - 1u];
+    for (unsigned int i = length - 2u; i > 1u; i--) {
+        ans *= z;
+        ans += coefficients[i];
+    }
+    ans *= z;
+    ans += coefficients[0];
+    return ans;
+}
+
 bool dsplab::math::Polynomial::DKAMethod(std::complex<double> *zeros, std::complex<double> *coefficients, unsigned int n) {
     
     if (nullptr == zeros) return false;

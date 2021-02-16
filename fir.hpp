@@ -58,6 +58,7 @@ namespace dsplab {
                 bool ClearDelays();
                 void Clear();
                 static bool CreateFrequencySample(double *normalized_angular_frequency, unsigned int s);
+                static bool AverageFilter(double *coefficients, unsigned int n);
         };
     }
 }

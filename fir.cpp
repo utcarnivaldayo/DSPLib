@@ -291,3 +291,16 @@ bool dsplab::filter::FIR::CreateFrequencySample(double *normalized_angular_frequ
     }
     return true;
 }
+
+bool dsplab::filter::FIR::AverageFilter(double* coefficients, unsigned int n) {
+
+    if (nullptr == coefficients) return false;
+    if (0u == n) return false;
+
+    coefficients[0] = 1.0 / (double)(n + 1u);
+    for (unsigned int i = 1u; i <= n; i++) {
+        coefficients[i] = 1.0;
+    }
+    return true;
+}
+
